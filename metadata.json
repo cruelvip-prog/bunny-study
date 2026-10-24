@@ -1,0 +1,6 @@
+{
+  "name": "NEET CBT Exam Simulator - Windows 10 Edition",
+  "description": "High-performance National Eligibility cum Entrance Test (NEET) Computer Based Test (CBT) simulator for Windows 10 PC with PDF question paper viewer, NTA question palette, real-time timer, answer key scoring, and offline local persistence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
