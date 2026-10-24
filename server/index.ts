@@ -22,6 +22,26 @@ declare global {
 
 const app = express();
 app.disable('x-powered-by');
+
+const ALLOWED_CORS_ORIGIN = 'https://oinkie-prep.pages.dev';
+app.use((request, response, next) => {
+  const origin = request.headers.origin;
+  if (origin === ALLOWED_CORS_ORIGIN) {
+    response.set('Access-Control-Allow-Origin', ALLOWED_CORS_ORIGIN);
+    response.set('Vary', 'Origin');
+  }
+  if (request.method === 'OPTIONS') {
+    if (origin === ALLOWED_CORS_ORIGIN) {
+      response.set('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE, OPTIONS');
+      response.set('Access-Control-Allow-Headers', 'Authorization, Content-Type, Accept');
+      response.set('Access-Control-Max-Age', '86400');
+    }
+    response.status(204).end();
+    return;
+  }
+  next();
+});
+
 app.use((request, response, next) => {
   if (request.path === '/api/auth/before-user-created') {
     next();
