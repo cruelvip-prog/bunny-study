@@ -1,62 +1,124 @@
+```html
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NEET CBT Exam Simulator - Windows 10 Edition</title>
-    <meta name="description" content="High-performance National Eligibility cum Entrance Test (NEET) Computer Based Test (CBT) simulator for Windows 10 PC with PDF question paper viewer, NTA question palette, real-time timer, answer key scoring, and offline local persistence." />
-    <meta property="og:title" content="NEET CBT Exam Simulator - Windows 10 Edition" />
-    <meta property="og:description" content="High-performance National Eligibility cum Entrance Test (NEET) Computer Based Test (CBT) simulator for Windows 10 PC with PDF question paper viewer, NTA question palette, real-time timer, answer key scoring, and offline local persistence." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
+
+    <title>OINKIE Prep — Practice. Analyse. Improve.</title>
+
+    <meta
+      name="description"
+      content="Prepare smarter for NEET with OINKIE Prep. Take practice tests, track your progress, analyze performance, and improve your preparation."
+    />
+
+    <meta name="application-name" content="OINKIE Prep" />
     <meta name="theme-color" content="#1e3a8a" />
+
+    <!-- Website icon shown in browser tabs -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Open Graph metadata -->
+    <meta property="og:title" content="OINKIE Prep — Prepare Smarter. Perform Better." />
+    <meta
+      property="og:description"
+      content="Take tests, track progress, fix mistakes and get closer to your dream rank."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pigbunn.cv/" />
+
+    <!-- Social sharing metadata -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="OINKIE Prep" />
+    <meta
+      name="twitter:description"
+      content="Practice. Analyse. Improve. Prepare smarter for NEET with OINKIE Prep."
+    />
+
     <script>
       try {
         const theme = localStorage.getItem('oinkie_prep_theme_v1');
+
         if (theme === 'dark' || theme === 'light') {
           document.documentElement.dataset.theme = theme;
           document.documentElement.style.colorScheme = theme;
-          document.querySelector('meta[name="theme-color"]')?.setAttribute(
-            'content',
-            theme === 'dark' ? '#0f172a' : '#1e3a8a',
-          );
+
+          document
+            .querySelector('meta[name="theme-color"]')
+            ?.setAttribute(
+              'content',
+              theme === 'dark' ? '#0f172a' : '#1e3a8a',
+            );
         }
       } catch {
         // Theme initialization must not prevent the app from loading.
       }
     </script>
   </head>
+
   <body>
     <div id="root"></div>
+
     <script type="module">
       async function startApp() {
         if (import.meta.env.DEV && 'serviceWorker' in navigator) {
           try {
-            const registrations = await navigator.serviceWorker.getRegistrations();
-            const staleRegistrations = registrations.filter((registration) => {
-              const worker = registration.active || registration.waiting || registration.installing;
-              if (!worker) return false;
-              const scriptUrl = new URL(worker.scriptURL);
-              return scriptUrl.origin === location.origin && scriptUrl.pathname.endsWith('/sw.js');
-            });
-            const unregistered = await Promise.all(
-              staleRegistrations.map((registration) => registration.unregister())
+            const registrations =
+              await navigator.serviceWorker.getRegistrations();
+
+            const staleRegistrations = registrations.filter(
+              (registration) => {
+                const worker =
+                  registration.active ||
+                  registration.waiting ||
+                  registration.installing;
+
+                if (!worker) return false;
+
+                const scriptUrl = new URL(worker.scriptURL);
+
+                return (
+                  scriptUrl.origin === location.origin &&
+                  scriptUrl.pathname.endsWith('/sw.js')
+                );
+              },
             );
-            const reloadKey = `oinkie-prep-dev-sw-reload:${location.pathname}`;
-            if (navigator.serviceWorker.controller && unregistered.some(Boolean)) {
+
+            const unregistered = await Promise.all(
+              staleRegistrations.map((registration) =>
+                registration.unregister(),
+              ),
+            );
+
+            const reloadKey =
+              `oinkie-prep-dev-sw-reload:${location.pathname}`;
+
+            if (
+              navigator.serviceWorker.controller &&
+              unregistered.some(Boolean)
+            ) {
               if (sessionStorage.getItem(reloadKey) !== '1') {
                 sessionStorage.setItem(reloadKey, '1');
                 location.reload();
                 return;
               }
-              console.error('A stale development Service Worker still controls this page after unregistering.');
+
+              console.error(
+                'A stale development Service Worker still controls this page after unregistering.',
+              );
             } else if (!navigator.serviceWorker.controller) {
               sessionStorage.removeItem(reloadKey);
             }
           } catch (error) {
-            console.error('Could not clean up a stale development Service Worker:', error);
+            console.error(
+              'Could not clean up a stale development Service Worker:',
+              error,
+            );
           }
         }
+
         await import('/src/main.tsx');
       }
 
@@ -64,3 +126,4 @@
     </script>
   </body>
 </html>
+```
