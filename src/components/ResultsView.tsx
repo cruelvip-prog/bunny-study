@@ -176,7 +176,7 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
           <div className="flex min-w-0 items-center gap-3">
             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-700 text-xs font-extrabold tracking-wide text-white">OP</div>
             <div className="min-w-0">
-              <p className="text-xs font-bold uppercase tracking-[0.14em] text-blue-700">OINKIE PREP · Test Analysis</p>
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-blue-700">Bunny study · Test Analysis</p>
               <h1 className="mt-1 truncate text-xl font-bold text-slate-900 sm:text-2xl">{config.title}</h1>
               <p className="mt-1 text-xs text-slate-500">
                 {config.candidateName || 'Candidate'} · {config.totalQuestions} questions · {timeIsAvailable ? `Time taken ${formatTime(timeSpentSeconds)}` : 'Time data unavailable'}
@@ -432,7 +432,7 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
         <footer className="flex flex-wrap items-center justify-between gap-2 border-t border-slate-200 pt-4 text-xs text-slate-500">
           <span>Answer-key status: <strong className="font-semibold text-slate-700">{effectiveAnswerKeyStatus.replaceAll('-', ' ')}</strong></span>
           <span>Scoring: +4 correct · −1 incorrect · 0 unanswered</span>
-          <span>OINKIE PREP is an independent practice simulator.</span>
+          <span>bunny study is an independent practice simulator.</span>
         </footer>
       </div>
     </main>
