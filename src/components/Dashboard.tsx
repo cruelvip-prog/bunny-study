@@ -1001,7 +1001,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
           </section>
 
           <footer id="settings" className="flex scroll-mt-24 flex-wrap items-center justify-between gap-3 border-t border-slate-200 py-5 text-[11px] text-slate-400">
-            <span>OINKIE PREP · Practice. Analyse. Improve.</span>
+            <span>· Practice. Analyse. Improve.</span>
             <span>Practice records are stored locally in this browser. No account or cloud sync is enabled.</span>
           </footer>
 
