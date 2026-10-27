@@ -1042,7 +1042,6 @@ function AuthenticatedApp({ userId }: { userId: string }) {
           {storageError} Keep this tab open until progress can be saved.
         </div>
       )}
-      {!showSetupModal && !(showAdminPanel && isAdmin) && (!config || isSubmitted) && <PiggieChatFloating />}
     </div>
   );
 }
