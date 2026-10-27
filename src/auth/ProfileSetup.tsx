@@ -30,7 +30,7 @@ export function ProfileSetup() {
       <section className="w-full max-w-lg rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
         <div className="mb-7 flex items-center gap-3">
           <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-600 text-white"><Dna className="h-6 w-6" /></span>
-          <span><span className="block text-lg font-black">OINKIE PREP</span><span className="block text-xs text-slate-500">Practice. Analyse. Improve.</span></span>
+          <span><span className="block text-lg font-black">Bunny study</span><span className="block text-xs text-slate-500">Practice. Analyse. Improve.</span></span>
         </div>
         <h1 className="text-2xl font-extrabold tracking-tight">Set up your study profile</h1>
         <p className="mt-2 text-sm leading-6 text-slate-600">A few details help personalize your NEET preparation space.</p>
@@ -56,7 +56,7 @@ export function ProfileSetup() {
           </label>
           {error && <p role="alert" className="rounded-xl border border-rose-200 bg-rose-50 px-3 py-2.5 text-sm text-rose-800">{error}</p>}
           <button type="submit" disabled={busy} className="min-h-12 w-full rounded-xl bg-blue-700 px-4 py-3 text-sm font-bold text-white shadow-sm hover:bg-blue-800 disabled:cursor-wait disabled:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700">
-            {busy ? 'Saving profile…' : 'Continue to OINKIE Prep'}
+            {busy ? 'Saving profile…' : 'Continue to Bunny study'}
           </button>
         </form>
         <button type="button" onClick={() => void signOut()} className="mt-4 text-sm font-semibold text-blue-700 hover:text-blue-800">Sign out</button>
