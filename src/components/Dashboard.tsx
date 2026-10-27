@@ -428,8 +428,8 @@ export const Dashboard: React.FC<DashboardProps> = ({
             <Dna className="h-6 w-6" />
           </span>
           <span className={`whitespace-nowrap ${isSidebarCollapsed ? 'desktop:hidden' : ''}`}>
-            <span className="block text-lg font-black tracking-tight text-slate-900">PigBunn Study</span>
-            <span className="block text-sm font-black tracking-tight text-slate-700">OINKIE PREP</span>
+            <span className="block text-lg font-black tracking-tight text-slate-900">Bunny Study</span>
+            <span className="block text-sm font-black tracking-tight text-slate-200">Practice. Analyse. Improve.</span>
           </span>
         </a>
 
