@@ -13,8 +13,8 @@ function AuthShell({ children }: { children: React.ReactNode }) {
             <Dna className="h-6 w-6" />
           </span>
           <span>
-            <span className="block text-lg font-black tracking-tight text-slate-900">PigBunn Study</span>
-            <span className="block text-sm font-black tracking-tight text-slate-700">OINKIE PREP</span>
+            <span className="block text-lg font-black tracking-tight text-slate-900">Bunny Study</span>
+            <span className="block text-sm font-black tracking-tight text-slate-700">JUST PREP</span>
           </span>
         </div>
         {children}
@@ -100,7 +100,7 @@ export function EmailAuthScreen({ recovery = false }: { recovery?: boolean }) {
     return (
       <AuthShell>
         <h1 className="text-2xl font-extrabold tracking-tight">Reset your password</h1>
-        <p className="mt-2 text-sm leading-6 text-slate-600">Choose a new password for your OINKIE Prep account.</p>
+        <p className="mt-2 text-sm leading-6 text-slate-600">Choose a new password for your Bunny study account.</p>
         <form
           className="mt-6 space-y-4"
           onSubmit={async (event) => {
