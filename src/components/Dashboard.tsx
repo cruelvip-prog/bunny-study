@@ -429,7 +429,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
           </span>
           <span className={`whitespace-nowrap ${isSidebarCollapsed ? 'desktop:hidden' : ''}`}>
             <span className="block text-lg font-black tracking-tight text-slate-900">Bunny Study</span>
-            <span className="block text-lg font-black tracking-tight text-slate-100">Practice. Analyse. Improve.</span>
+            <span className="block text-mg font-black tracking-tight text-slate-700">Practice. Analyse. Improve.</span>
           </span>
         </a>
 
